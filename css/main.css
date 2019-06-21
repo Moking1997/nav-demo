@@ -1,138 +1,138 @@
 
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            background-color: #ddd;
-            background-image: url(../img/alum.png);
+body {
+    background-color: #ddd;
+    background-image: url(../img/alum.png);
 
-        }
+}
 
-        .wrap {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+.wrap {
+    min-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 
-        }
+}
 
-        #keyboard {
-            display: inline-block;
-            background-color: rgba(22, 13, 13, 0.2);
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-        }
+#keyboard {
+    display: inline-block;
+    background-color: rgba(22, 13, 13, 0.2);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
 
-        kbd {
-            position: relative;
-            text-transform: uppercase;
-            text-align: center;
-            padding: 2px 0;
-        }
+kbd {
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 2px 0;
+}
 
-        kbd>button {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            display: none;
-        }
+kbd>button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
 
-        kbd:hover>button {
-            display: inline-block;
-        }
+kbd:hover>button {
+    display: inline-block;
+}
 
-        .key {
-            position: relative;
-            width: 49px;
-            height: 50px;
-            background: linear-gradient(to bottom, #292929 0%, #111111 100%);
-            border: 1px solid #373737;
-            color: #fff;
-            border-radius: 6px;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
-        }
+.key {
+    position: relative;
+    width: 49px;
+    height: 50px;
+    background: linear-gradient(to bottom, #292929 0%, #111111 100%);
+    border: 1px solid #373737;
+    color: #fff;
+    border-radius: 6px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
+}
 
-        .key:active {
-            top: 2px;
-            box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
-        }
+.key:active {
+    top: 2px;
+    box-shadow: 2px 0 2px rgba(0, 0, 0, 0.5);
+}
 
-        .key img {
-            width: 16px;
-            height: 16px;
-            position: absolute;
-            left: 4px;
-            bottom: 2px;
-            padding: 1px;
-            border-radius: 50%;
-        }
+.key img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 4px;
+    bottom: 2px;
+    padding: 1px;
+    border-radius: 50%;
+}
 
-        .key .text {
-            position: absolute;
-            left: 4px;
-            top: 2px;
-        }
+.key .text {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}
 
-        .row {
-            margin: 20px;
-        }
+.row {
+    margin: 20px;
+}
 
-        .row .key {
-            margin: 0 10px;
-        }
+.row .key {
+    margin: 0 10px;
+}
 
-        #keyboard>div:nth-child(2) {
-            margin-left: 40px;
-        }
+#keyboard>div:nth-child(2) {
+    margin-left: 40px;
+}
 
-        #keyboard>div:nth-child(3) {
-            margin-left: 85px;
-        }
+#keyboard>div:nth-child(3) {
+    margin-left: 85px;
+}
 
-        #lightswitch {
-            position: absolute;
-            top: 9.9em;
-            right: 0px;
-            width: 100px;
-            font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
-        }
+#lightswitch {
+    position: absolute;
+    top: 9.9em;
+    right: 0px;
+    width: 100px;
+    font-family: keyboard, "Arial Rounded", Helvetica, Arial, sans-serif;
+}
 
-        #lightswitch span {
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background-color: #444;
-            display: inline-block;
-            margin-right: 10px;
-        }
+#lightswitch span {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #444;
+    display: inline-block;
+    margin-right: 10px;
+}
 
-        .night #keyboard {
-            display: inline-block;
-            background-color: rgba(58, 53, 53, 0.2);
-            box-shadow: 0 1px 0 rgba(255, 255, 255, .4), 0 1px 4px rgba(255, 255, 255, .3);
-            border-radius: 20px;
-        }
+.night #keyboard {
+    display: inline-block;
+    background-color: rgba(58, 53, 53, 0.2);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .4), 0 1px 4px rgba(255, 255, 255, .3);
+    border-radius: 20px;
+}
 
-        .night #lightswitch span {
-            background-color: #0f0;
-            box-shadow: 0 0 3px #0f0;
-        }
+.night #lightswitch span {
+    background-color: #0f0;
+    box-shadow: 0 0 3px #0f0;
+}
 
-        .night {
-            background-color: #222;
-            background-image: url(../img/alum-night.png);
-        }
+.night {
+    background-color: #222;
+    background-image: url(../img/alum-night.png);
+}
 
-        .night .key {
-            box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 1px 4px rgba(255, 255, 255, .3);
-            text-shadow: 2px 2px 3px rgba(255, 255, 255, .4), -2px 2px 3px rgba(255, 255, 255, .4), 2px -2px 3px rgba(255, 255, 255, .4), -2px -2px 3px rgba(255, 255, 255, .4);
-        }
-    
+.night .key {
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 1px 4px rgba(255, 255, 255, .3);
+    text-shadow: 2px 2px 3px rgba(255, 255, 255, .4), -2px 2px 3px rgba(255, 255, 255, .4), 2px -2px 3px rgba(255, 255, 255, .4), -2px -2px 3px rgba(255, 255, 255, .4);
+}
