@@ -136,22 +136,24 @@ kbd:hover>button {
     box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 1px 4px rgba(255, 255, 255, .3);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, .4), -2px 2px 3px rgba(255, 255, 255, .4), 2px -2px 3px rgba(255, 255, 255, .4), -2px -2px 3px rgba(255, 255, 255, .4);
 }
-
+#searchform {
+    position: absolute;
+    left: 41%;
+    top: 30%;
+}
 #searchform input {
     padding-left: 3px;
     height: 30px;
     width: 200px;
-    position: absolute;
-    left: 40%;
-    top: 30%;
+    position: relative;
     color: #eee;
     border-radius: 5px;
     background-color: #555;
 }
 #searchform button {
-    position: absolute;
-    left: 60%;
-    top: 30%;
+    position: relative;
+    left: 10px;
+    bottom: 2px;
     border-radius: 5px;
     background-color: #555;
     height: 30px;
@@ -163,4 +165,65 @@ kbd:hover>button {
     border: medium none;
     cursor: pointer;
     color: #eee;
+}
+
+#octo-peek {
+    position: absolute;
+    width: 256px;
+    height: 87px;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+}
+#octo-peek a {
+    display: block;
+    width: 86px;
+    height: 88px;
+    padding: 5px;
+    position: absolute;
+    right: -37px;
+    top: -36px;
+    background-image: url(../img/octocat-peak.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    z-index: 77777;
+    -webkit-transition: top ease-out .2s, right ease-out .2s;
+    -moz-transition: top ease-out .2s, right ease-out .2s;
+    -ms-transition: top ease-out .2s, right ease-out .2s;
+    -o-transition: top ease-out .2s, right ease-out .2s;
+    transition: top ease-out .2s, right ease-out .2s;
+}
+#octo-peek a span {
+    position: absolute;
+    top: 32px;
+    left: -159px;
+    width: 147px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 5px;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    border-radius: 7px;
+    background-color: rgba(255,255,255,.7);
+    opacity: 0;
+    -webkit-transition: opacity ease-out .2s;
+    -moz-transition: opacity ease-out .2s;
+    -ms-transition: opacity ease-out .2s;
+    -o-transition: opacity ease-out .2s;
+    transition: opacity ease-out .2s;
+}
+#octo-peek a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+#octo-peek a:hover,
+#octo-peek.small a:hover {
+  top: -22px;
+  right: -11px;
+}
+#octo-peek a:hover span {
+  opacity: 1;
 }

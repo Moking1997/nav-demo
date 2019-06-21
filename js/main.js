@@ -1,5 +1,4 @@
-
-
+//初始化数据
 const init = function () {
     var keys = {
         '0': { 0: 'q', 1: 'w', 2: 'e', 3: 'r', 4: 't', 5: 'y', 6: 'u', 7: 'i', 8: 'o', 9: 'p', 'length': 10 },
@@ -23,19 +22,27 @@ const init = function () {
         "hash": hash
     }
 }
+
+
+//获取浏览器localStorage
 const getFromLocalStorage = function (name) {
     return JSON.parse(localStorage.getItem(name) || null)
 }
 
+
 const c = function (tagName) {
     return document.createElement(tagName)
 }
+
+
 const createSpan = function (textContent) {
     let span = c('span')
     span.textContent = textContent
     span.className = 'text'
     return span
 }
+
+// 创建键盘按钮
 const createButton = function (id) {
     let button = c('button')
     button.textContent = 'E'
@@ -55,6 +62,9 @@ const createButton = function (id) {
     }
     return button
 }
+
+
+
 const createImg = function (domain) {
     let img = c('img')
     if (domain) {
@@ -67,6 +77,10 @@ const createImg = function (domain) {
     }
     return img
 }
+
+
+
+//生成键盘
 const gennerateKeyboard = function (keys, hash) {
     var keybox = document.getElementById('keyboard')
     var index = 0
@@ -94,16 +108,22 @@ const gennerateKeyboard = function (keys, hash) {
         index = index + 1
     }
 }
+
+
+//监听键盘事件
 const listenKeyboard = function (hash) {
     document.onkeypress = function (press) {
         if (!bodyState) {
             let k = press['key']
             Web_side = hash[k]
             window.open('http://' + Web_side, '_blank')
-            console.log(Web_side)
+
         }
     }
 }
+
+
+
 const listenLight = function () {
     var lightswitch = document.getElementById('lightswitch')
     var light = true
@@ -117,14 +137,45 @@ const listenLight = function () {
         }
     }
 }
+
+
+//搜索按钮
+const getSearch = function () {
+
+    var search = document.getElementById('search')
+    var searchButton = document.getElementById('searchButton')
+
+    searchButton.onclick = function (e) {
+        let searchUrl = 'https://www.baidu.com/s?wd=' + search.value
+        window.open(searchUrl, '_blank');
+        console.log('clicked', search.value)
+        searchState = false
+    }
+    document.body.onclick = function (e) {
+        if (searchState) {
+            bodyState = true
+            searchState = false
+        } else {
+            bodyState = false
+        }
+    }
+    search.onfocus = function (e) {
+        searchState = true
+    }
+
+}
+
 //初始化数据
+
 var HashK = init()
 var keys = HashK['keys']
 var hash = HashK['hash']
-
+var searchState = false
+var bodyState = false
 //生成键盘
 gennerateKeyboard(keys, hash)
-
+//监听搜索事件
+getSearch()
 //监听键盘
 listenKeyboard(hash)
 //监听切换主题开关
