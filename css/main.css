@@ -136,3 +136,31 @@ kbd:hover>button {
     box-shadow: 0 1px 0 rgba(255, 255, 255, .6), 0 1px 4px rgba(255, 255, 255, .3);
     text-shadow: 2px 2px 3px rgba(255, 255, 255, .4), -2px 2px 3px rgba(255, 255, 255, .4), 2px -2px 3px rgba(255, 255, 255, .4), -2px -2px 3px rgba(255, 255, 255, .4);
 }
+
+#searchform input {
+    padding-left: 3px;
+    height: 30px;
+    width: 200px;
+    position: absolute;
+    left: 40%;
+    top: 30%;
+    color: #eee;
+    border-radius: 5px;
+    background-color: #555;
+}
+#searchform button {
+    position: absolute;
+    left: 60%;
+    top: 30%;
+    border-radius: 5px;
+    background-color: #555;
+    height: 30px;
+    font-size: 12px;
+    _padding-top: 1px;
+    width: 45px;
+    line-height: 30px;
+    text-align: center;
+    border: medium none;
+    cursor: pointer;
+    color: #eee;
+}

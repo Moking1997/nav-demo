@@ -1,3 +1,5 @@
+
+
 const init = function () {
     var keys = {
         '0': { 0: 'q', 1: 'w', 2: 'e', 3: 'r', 4: 't', 5: 'y', 6: 'u', 7: 'i', 8: 'o', 9: 'p', 'length': 10 },
@@ -8,11 +10,9 @@ const init = function () {
     var hash = {
         'q': 'www.qq.com',
         'w': 'www.weibo.com',
-        's': 'www.sohu.com',
         'z': 'www.zhihu.com',
         'b': 'www.baidu.com',
         'd': 'www.douban.com',
-        'x': undefined,
     }
     var hashInLocalStorage = getFromLocalStorage('hash')
     if (hashInLocalStorage) {
@@ -96,10 +96,12 @@ const gennerateKeyboard = function (keys, hash) {
 }
 const listenKeyboard = function (hash) {
     document.onkeypress = function (press) {
-        let k = press['key']
-        Web_side = hash[k]
-        window.open('http://' + Web_side, '_blank')
-        console.log(Web_side)
+        if (!bodyState) {
+            let k = press['key']
+            Web_side = hash[k]
+            window.open('http://' + Web_side, '_blank')
+            console.log(Web_side)
+        }
     }
 }
 const listenLight = function () {

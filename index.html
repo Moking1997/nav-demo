@@ -11,14 +11,46 @@
 </head>
 
 <body>
+    <form id="searchform">
+        <input type="text" id='search' class="key">
+        <button type="submit" id="searchButton" class="key">搜索</button>
+    </form>
     <div class="wrap">
         <div id="keyboard">
 
         </div>
     </div>
+
     <div id="lightswitch" class="key">
         <span></span> light
     </div>
+    <script>
+        var searchState = false
+        var bodyState = false
+        var search = document.getElementById('search')
+        var searchButton = document.getElementById('searchButton')
+
+        searchButton.onclick = function (e) {
+            let searchUrl = 'https://www.baidu.com/s?wd=' + search.value
+            window.open(searchUrl, '_blank');
+            console.log('clicked', search.value)
+            searchState = false
+        }
+        document.body.onclick = function (e) {
+            if (searchState) {
+                bodyState = true
+                searchState = false
+            } else {
+                bodyState = false
+            }
+            console.log(bodyState)
+        }
+        search.onfocus = function (e) {
+            searchState = true
+            console.log(searchState)
+        }
+
+    </script>
     <script src='js/main.js'></script>
 
 </body>
