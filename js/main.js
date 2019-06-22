@@ -70,10 +70,10 @@ const createImg = function (domain) {
     if (domain) {
         img.src = 'http://' + domain + '/favicon.ico'
     } else {
-        img.src = '../img/icon.png'
+        img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
     }
     img.onerror = function (e) {
-        e.target.src = '../img/icon.png'
+        e.target.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
     }
     return img
 }
